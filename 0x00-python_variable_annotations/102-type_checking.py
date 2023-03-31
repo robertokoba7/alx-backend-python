@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
-''' Description: Use mypy to validate the following piece of code and apply any necessary changes.
-    Arguments: lst: Tuple, factor: int = 2
+'''
+Use mypy to validate the following piece of code and apply any necessary changes.
 '''
 
 from typing import Union, Any, Mapping, Tuple, List
@@ -16,7 +16,5 @@ def zoom_array(lst: Tuple, factor: int = 2) -> List:
 
 
 array = tuple([12, 72, 91])
-
 zoom_2x = zoom_array(array)
-
 zoom_3x = zoom_array(array, int(3.0)
