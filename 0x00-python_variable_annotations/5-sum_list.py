@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-function which takes a list floats as argument and returns their sum as a float.
+function which takes a list floats as argument and return sum as a float.
 """
 
 from typing import List
