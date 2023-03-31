@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
-''' Description: Use mypy to validate the following piece of code
-                 and apply any necessary changes.
+''' Description: Use mypy to validate the following piece of code and apply any necessary changes.
     Arguments: lst: Tuple, factor: int = 2
 '''
 
