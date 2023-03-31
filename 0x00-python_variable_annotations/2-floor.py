@@ -2,7 +2,7 @@
 """
 takes a foat and return the floor the float
 """
-
+import math
 
 def floor(n: float) -> int:
     """return the floor"""
