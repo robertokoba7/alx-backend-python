@@ -9,7 +9,7 @@ from typing import List
 wait_random = __import__('0-basic_async_syntax').wait_random
 
 
-def task_wait_random(max_delay: int) -> Type[asyncio.Task]:
+def task_wait_random(max_delay: int) -> asyncio.Task:
     """
     Create asycio.Task object that runs wait_random with max_delay
     """
