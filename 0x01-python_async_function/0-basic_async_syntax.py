@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-asynchronous coroutine that takes in an integer argument, waits for a random delay then return it
+asynchronous coroutine that takes an integer argument, waits for random delay then return it
 """
 import asyncio
 import random
