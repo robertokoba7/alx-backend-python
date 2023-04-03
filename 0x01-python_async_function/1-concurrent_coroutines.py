@@ -14,9 +14,10 @@ async def wait_n(n: int = 0, max_delay: int = 10) -> List[float]:
     """
      return list of all delays which is a float values
     """
-    delays: List[float] = [
-    ]  # Define an empty list called delays to store the float values
-    tasks: List = []  # Define an empty list called tasks to store the tasks
+    # Define an empty list called delays to store the float values
+    delays: List[float] = []
+    # Define an empty list called tasks to store the tasks
+    tasks: List = []
 
     for _ in range(n):
         # Create a new task using wait_random() and add it to tasks
@@ -24,10 +25,12 @@ async def wait_n(n: int = 0, max_delay: int = 10) -> List[float]:
         tasks.append(task)
         tasks.append(task)
 
-    for task in asyncio.as_completed(
-            tasks):  # Loop over the tasks as they are completed
+    # Loop over the tasks as they are completed
+    for task in asyncio.as_completed(tasks):
+        # Wait for the task to complete and store the result in delay
+        delay = await task
+        # Add the delay value to the delays list
+        delays.append(delay)
 
-        delay = await task  # Wait for the task to complete and store the result in delay
-        delays.append(delay)  # Add the delay value to the delays list
-
-    return sorted(delays)  # Sorted the delays in ascending order
+    # Sorted the delays in ascending order
+    return sorted(delays)
