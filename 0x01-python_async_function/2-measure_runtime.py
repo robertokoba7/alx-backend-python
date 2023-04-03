@@ -20,7 +20,7 @@ async def measure_time(n: int, max_delay: int) -> float:
     delays: List[float] = await wait_n(n, max_delay)
     # Get the end time
     end_time = time.time()
-    # Total execution time 
+    # Total execution time
     total_time = end_time - start_time
-    #return value: average execution time per task
+    # return value: average execution time per task
     return total_time / n
