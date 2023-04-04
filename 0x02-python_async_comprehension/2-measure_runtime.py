@@ -2,11 +2,12 @@
 """
 Async Comprehension and Parallel execution using asyncio.gather
 """
-from typing import List
+import asyncio
 from time import perf_counter
+from typing import List
 
 
-async_comprehension = __import__(1-async_comprehension).async_comprehension
+async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> List[float]:
