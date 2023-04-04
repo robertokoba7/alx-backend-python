@@ -18,13 +18,3 @@ async def async_generator() -> AsyncGenerator[
             yield random.randint(0, 10)
     except GeneratorExit:
         pass
-
-
-async def main() -> None:
-    """
-    Coroutine asynchronously iterate over a given number.
-    """
-    async for number in async_generator():
-        print(number)
-
-asyncio.run(main())
