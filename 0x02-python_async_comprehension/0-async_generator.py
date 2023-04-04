@@ -6,8 +6,9 @@ import asyncio
 import random
 from typing import AsyncGenerator
 
+
 async def async_generator() -> AsyncGenerator[
-int, None, None]:
+        float, None, None]:
     """
     Corotine which asynchronously yields 10 random integer.
     """
