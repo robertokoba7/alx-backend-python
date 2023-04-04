@@ -2,12 +2,11 @@
 """
 Async Comprehension and Parallel execution using asyncio.gather
 """
-
 from typing import List
 from time import perf_counter
 
 
-async_generator = __import__('0-async_generator').async_generator
+# async_generator = __import__('0-async_generator').async_generator
 async_comprehension = __import__(1-async_comprehension).async_comprehension
 
 
