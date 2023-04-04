@@ -6,11 +6,10 @@ import asyncio
 import random
 
 
-async def async_generator() -> Generator[
-float, None, None]:
+async def async_generator():
   """
   Corotine which asynchronously yields 10 random integer.
   """
-    for number in range(10):
-        await asyncio.sleep(1)
-        yield random.uniform(0, 10)
+  for number in range(10):
+      await asyncio.sleep(1)
+      yield random.uniform(0, 10)
