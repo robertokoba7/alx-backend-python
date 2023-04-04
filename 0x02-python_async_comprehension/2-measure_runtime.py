@@ -5,8 +5,7 @@ Async Comprehension and Parallel execution using asyncio.gather
 import asyncio
 import time
 from typing import List
-
-async_comprehension = __import__('1-async_comprehension').async_comprehension
+from async_comprehension import async_comprehension
 
 
 async def measure_runtime() -> List[float]:
@@ -18,6 +17,3 @@ async def measure_runtime() -> List[float]:
     result = await asyncio.gather(*my_list)
     total_time = time.perf_counter() - start_time
     return total_time
-
-if __name__ == '__main__':
-    asyncio.run(measure_runtime())
