@@ -7,7 +7,7 @@ import random
 from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncGenerator[int, None]
+async def async_generator() -> AsyncGenerator[int, None]:
   """
     Corotine which asynchronously yields 10 random integer in the given range
 
