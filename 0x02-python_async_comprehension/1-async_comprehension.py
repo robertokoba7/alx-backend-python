@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-
+Coroutine that collects 10 random numbers using
+async comprehension.
 """
 import asyncio
 from typing import List
