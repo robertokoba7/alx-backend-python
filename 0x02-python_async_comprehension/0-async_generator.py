@@ -8,7 +8,7 @@ from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[
-        float, None, None]:
+        float, None]:
     """
     Corotine which asynchronously yields integers randomly between (0,10).
     """
