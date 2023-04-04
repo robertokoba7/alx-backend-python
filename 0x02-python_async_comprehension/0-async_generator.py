@@ -4,9 +4,9 @@ Creating Async Generator using random module
 """
 import asyncio
 import random
+from typing import AsyncGenerator
 
-
-async def async_generator() -> Generator[
+async def async_generator() -> AsyncGenerator[
 int, None, None]:
     """
     Corotine which asynchronously yields 10 random integer.
