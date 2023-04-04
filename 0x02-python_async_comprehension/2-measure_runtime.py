@@ -6,17 +6,15 @@ from typing import List
 from time import perf_counter
 
 
-# async_generator = __import__('0-async_generator').async_generator
 async_comprehension = __import__(1-async_comprehension).async_comprehension
 
 
-async def measure_runtime() -> float:
+async def measure_runtime() -> List[float]:
     """
     measure the total runtime and return it.
     """
-    start_time = asyncio.default_timer()
-    await asyncio.gather(*[async_comprehension() for _ in range(4)])
-    elapse = asyncio.default_timer()
-    return elapse - start_time
-
-print(asyncio.run(measure_runtime()))
+    start_time = time.perf_counter()
+    my_list = [asyncio.create_(async_comprehension()) for i in range(4)])
+    result = await asyncio.gather(*my_list)
+    total_time = time.perf_counter() -start_time
+    return total_time
