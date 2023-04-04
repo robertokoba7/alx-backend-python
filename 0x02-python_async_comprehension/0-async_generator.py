@@ -2,7 +2,6 @@
 """
 Creating Async Generator using random module
 """
-from typing import AsyncGenerator
 import asyncio
 import random
 
