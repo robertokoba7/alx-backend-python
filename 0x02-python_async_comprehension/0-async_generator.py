@@ -9,7 +9,7 @@ from typing import AsyncGenerator
 
 async def async_generator() -> AsyncGenerator[float, None, None]:
   """
-    Corotine which asynchronously yields 10 random integer in the given range
+    Corotine which asynchronously yields 10 random integer.
     """
    try:
         for number in range(10):
