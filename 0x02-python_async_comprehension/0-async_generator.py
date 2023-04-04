@@ -8,10 +8,13 @@ from typing import AsyncGenerator
 
 
 async def async_generator() -> AsyncGenerator[
-        int, None, None]:
+        int, None]:
     """
     Corotine which asynchronously yields 10 random integer.
     """
-    for number in range(10):
-        await asyncio.sleep(1)
-        yield random.randint(0, 10)
+    try:
+        for number in range(10):
+            await asyncio.sleep(1)
+            yield random.randint(0, 10)
+    except GeneratorExit:
+        pass
