@@ -33,7 +33,8 @@ class TestGithubOrgClient(unittest.TestCase):
         # Set up mock to return expected value from `get_json`
         get_patch.return_value = expected
 
-        # Create a GithubOrgClient instance and check that `org` is set correctly
+        # Create a GithubOrgClient instance and check that `org` is set
+        # correctly
         x = GithubOrgClient(org)
         self.assertEqual(x.org, expected)
 
@@ -66,10 +67,11 @@ class TestGithubOrgClient(unittest.TestCase):
         to_mock = 'client.GithubOrgClient._public_repos_url'
         get_json_mock.return_value = [jeff, bobb, suee]
 
-        # Create a GithubOrgClient instance and check that `public_repos` returns the expected values
+        # Create a GithubOrgClient instance and check that `public_repos`
+        # returns the expected values
         with patch(to_mock, PropertyMock(return_value="www.yes.com")) as y:
             x = GithubOrgClient("x")
-           
+
     with patch(to_mock, PropertyMock(return_value="www.yes.com")) as y:
         x = GithubOrgClient("x")
         self.assertEqual(x.public_repos(), ['Jeff', 'Bobb', 'Suee'])
@@ -79,6 +81,7 @@ class TestGithubOrgClient(unittest.TestCase):
         get_json_mock.assert_called_once_with("www.yes.com")
         y.assert_called_once_with()
 
+
 @parameterized.expand([
     ({'license': {'key': 'my_license'}}, 'my_license', True),
     ({'license': {'key': 'other_license'}}, 'my_license', False)
@@ -86,6 +89,7 @@ class TestGithubOrgClient(unittest.TestCase):
 def test_has_license(self, repo, license, expected):
     """ Test the license checker """
     self.assertEqual(GithubOrgClient.has_license(repo, license), expected)
+
 
 @classmethod
 def setUpClass(cls):
@@ -105,10 +109,12 @@ def setUpClass(cls):
     options = {cls.org_payload["repos_url"]: repos_mock}
     cls.get.side_effect = lambda y: options.get(y, org_mock)
 
+
 @classmethod
 def tearDownClass(cls):
     """ Unprepare for testing """
     cls.get_patcher.stop()
+
 
 def test_public_repos(self):
     """ Public repos test """
@@ -119,6 +125,7 @@ def test_public_repos(self):
     self.assertEqual(y.public_repos("NONEXISTENT"), [])
     self.get.assert_has_calls([call("https://api.github.com/orgs/x"),
                                call(self.org_payload["repos_url"])])
+
 
 def test_public_repos_with_license(self):
     """ Public repos with license test """
