@@ -81,11 +81,11 @@ class TestGithubOrgClient(unittest.TestCase):
         get_json_mock.assert_called_once_with("www.yes.com")
         y.assert_called_once_with()
 
-
 @parameterized.expand([
     ({'license': {'key': 'my_license'}}, 'my_license', True),
     ({'license': {'key': 'other_license'}}, 'my_license', False)
 ])
+
 def test_has_license(self, repo, license, expected):
     """ Test the license checker """
     self.assertEqual(GithubOrgClient.has_license(repo, license), expected)
@@ -115,7 +115,6 @@ def tearDownClass(cls):
     """ Unprepare for testing """
     cls.get_patcher.stop()
 
-
 def test_public_repos(self):
     """ Public repos test """
     y = GithubOrgClient("x")
@@ -125,7 +124,6 @@ def test_public_repos(self):
     self.assertEqual(y.public_repos("NONEXISTENT"), [])
     self.get.assert_has_calls([call("https://api.github.com/orgs/x"),
                                call(self.org_payload["repos_url"])])
-
 
 def test_public_repos_with_license(self):
     """ Public repos with license test """
