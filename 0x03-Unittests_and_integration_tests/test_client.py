@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ This module contains unit and integration
-    tests for utils.py and client. 
+    tests for utils.py and client.
 """
 
 
@@ -32,7 +32,7 @@ class TestGithubOrgClient(unittest.TestCase):
         get_patch.return_value = expected
         x = GithubOrgClient(org)
         self.assertEqual(x.org, expected)
-        get_patch.assert_called_once_with("https://api.github.com/orgs/"+org)
+        get_patch.assert_called_once_with("https://api.github.com/orgs/" + org)
 
     def test_public_repos_url(self):
         """
